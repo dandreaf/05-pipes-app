@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { PrimeNG } from 'primeng/config';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'pipesApp';
+export class AppComponent implements OnInit {
+
+  constructor( private primeng: PrimeNG ) {}
+
+  ngOnInit() {
+    this.primeng.ripple.set(true);
+  };
 }
